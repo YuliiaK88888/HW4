@@ -1,7 +1,10 @@
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.ArrayList;
 
-public class HW4 {
+public class HW4<a> {
+
+
     public static void main(String[] args) {
         first();
         second();
@@ -14,6 +17,8 @@ public class HW4 {
         nine();
         ten();
         two_one();
+        two_two();
+
     }
 
     public static void first() {
@@ -259,19 +264,37 @@ public class HW4 {
             list.set(i, newValue);
         }
         System.out.println(list);
+        System.out.println();
+
     }
-    public class Person {
-        String surname;        // имя
-        int age;
+
+    public static class Person {
+        static String surname;
+        static int age;
+
+        Person(String surname, int age) {
+            Person.surname = surname;
+            Person.age = age;
+        }
     }
-    ArrayList<Person> persons = new ArrayList<>();
-    persons.add("Petrov", 33);
-//    public static void two_two() {
-//        Person person1 = new Person
-//
-//    }
+    public static void two_two() {
+        Person a = new Person("Petrov", 30);
+        Person b = new Person("Ivanov", 10);
+        Person c = new Person("Sidorov", 55);
+        Person d = new Person("Vasiliyev", 90);
+        ArrayList<Person> persons = new ArrayList<Person>();
+        persons.add(a);
+        persons.add(b);
+        persons.add(c);
+        persons.add(d);
+
+        for (int i = 0; i < persons.size(); i++){
+            if ( persons.get(i).age>=30){
+                System.out.println(persons.get(i));
+            }
+        }
 
 
-
+    }
 }
 
