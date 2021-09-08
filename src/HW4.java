@@ -3,6 +3,20 @@ import java.util.stream.Collectors;
 
 public class HW4 {
     public static void main(String[] args) {
+        first();
+        second();
+        third();
+        forts();
+        fifths();
+        six();
+        sevenths();
+        eights();
+        nine();
+        ten();
+        two_one();
+    }
+
+    public static void first() {
         ArrayList<Integer> list1 = new ArrayList<>();
         list1.add(12);
         list1.add(9);
@@ -19,7 +33,7 @@ public class HW4 {
         list1.add(10);
         list1.add(15);
         list1.add(100);
-        //1
+
         for (int i = 0; i < list1.size(); i++) {
             if (list1.get(i) % 2 == 0) {
                 System.out.print(list1.get(i) + " ");
@@ -27,7 +41,26 @@ public class HW4 {
         }
         System.out.println();
 
-        //2
+    }
+
+    public static void second() {
+        ArrayList<Integer> list1 = new ArrayList<>();
+        list1.add(12);
+        list1.add(9);
+        list1.add(2);
+        list1.add(4);
+        list1.add(5);
+        list1.add(6);
+        list1.add(11);
+        list1.add(17);
+        list1.add(22);
+        list1.add(19);
+        list1.add(1);
+        list1.add(7);
+        list1.add(10);
+        list1.add(15);
+        list1.add(100);
+
         int temp = 0;
         for (int j = 0; j < list1.size(); j++) {
             if (list1.get(j) % 2 != 0) {
@@ -35,14 +68,15 @@ public class HW4 {
             }
         }
         System.out.println(temp);
+    }
 
-        //3
+    public static void third() {
         ArrayList<Integer> list2 = new ArrayList<>();
         list2.add(1);
+        list2.add(8);
+        list2.add(9);
+        list2.add(12);
         list2.add(2);
-        list2.add(3);
-        list2.add(4);
-        list2.add(5);
         list2.add(6);
         list2.add(7);
         list2.add(8);
@@ -54,12 +88,53 @@ public class HW4 {
         }
         System.out.println();
 
-        //4
+        //3.2
+        list2.stream().limit(5).forEach(System.out::print);
+        System.out.println();
+    }
+
+    public static void forts() {
+        ArrayList<Integer> list1 = new ArrayList<>();
+        list1.add(12);
+        list1.add(9);
+        list1.add(2);
+        list1.add(4);
+        list1.add(5);
+        list1.add(6);
+        list1.add(11);
+        list1.add(17);
+        list1.add(22);
+        list1.add(19);
+        list1.add(1);
+        list1.add(7);
+        list1.add(10);
+        list1.add(15);
+        list1.add(100);
+
         Collections.sort(list1);
         System.out.println(list1);
         System.out.println();
 
-        //5
+    }
+
+    public static void fifths() {
+        ArrayList<Integer> list1 = new ArrayList<>();
+        list1.add(12);
+        list1.add(9);
+        list1.add(2);
+        list1.add(4);
+        list1.add(5);
+        list1.add(6);
+        list1.add(11);
+        list1.add(17);
+        list1.add(22);
+        list1.add(19);
+        list1.add(1);
+        list1.add(7);
+        list1.add(10);
+        list1.add(15);
+        list1.add(100);
+
         list1.sort((a, b) -> Double.compare(b, a));
         System.out.println(list1);
         System.out.println();
@@ -67,7 +142,9 @@ public class HW4 {
         Collections.sort(list1, Collections.reverseOrder());
         System.out.println(list1);
 
-        //6
+    }
+
+    public static void six() {
         ArrayList<Integer> list3 = new ArrayList<>();
         list3.add(2);
         list3.add(2);
@@ -81,25 +158,120 @@ public class HW4 {
         list3.add(10);
         List<Integer> list1Distinct = list3.stream().distinct().collect(Collectors.toList());
         System.out.println(list1Distinct);
+        System.out.println();
+    }
 
-        //7???
+    public static void sevenths() {
+
         List<Integer> list4 = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 13);
         List<String> stringsFromINT = list4.stream().map(Object::toString)
                 .collect(Collectors.toList());
         stringsFromINT.stream().findAny().orElse("1");
         System.out.println(stringsFromINT);
-
-        //8???
-
-        //9???
-
-
-        //10
-        int p = list4.stream().mapToInt((s) -> Integer.parseInt(String.valueOf(s))).sum();
-        System.out.println(p);
-       OptionalDouble d = list4.stream().mapToInt((s) -> Integer.parseInt(String.valueOf(s))).average();
-        System.out.println(d);
+        System.out.println();
     }
-}
 
+    public static void eights() {
+        ArrayList<Integer> list = new ArrayList<>();
+        list.add(11);
+        list.add(81);
+        list.add(1);
+        list.add(102);
+        list.add(0);
+        list.add(60);
+        list.add(70);
+        list.add(8);
+        list.add(9);
+        list.add(10);
+
+
+        for (int i = 0; i < list.size() - 1; i++) {
+            if (list.get(i) > 30) {
+                System.out.println(list.get(i));
+                break;
+            }
+        }
+        System.out.println();
+    }
+
+    public static void nine() {
+        ArrayList<Integer> list = new ArrayList<>();
+        list.add(2);
+        list.add(22);
+        list.add(39);
+        list.add(51);
+        list.add(15);
+        list.add(26);
+        list.add(38);
+        list.add(83);
+        list.add(0);
+        list.add(120);
+
+        Integer max = list.stream().max(Comparator.naturalOrder()).get();
+        System.out.println(max);
+        System.out.println();
+        Integer min = list.stream().min(Comparator.naturalOrder()).get();
+        System.out.println(min);
+        System.out.println();
+
+    }
+
+    public static void ten() {
+        ArrayList<Integer> list = new ArrayList<>();
+        list.add(12);
+        list.add(9);
+        list.add(2);
+        list.add(4);
+        list.add(5);
+        list.add(6);
+        list.add(11);
+        list.add(17);
+        list.add(22);
+        list.add(19);
+        list.add(1);
+        list.add(7);
+        list.add(10);
+        list.add(15);
+        list.add(100);
+
+        int p = list.stream().mapToInt((s) -> Integer.parseInt(String.valueOf(s))).sum();
+        System.out.println(p);
+        OptionalDouble d = list.stream().mapToInt((s) -> Integer.parseInt(String.valueOf(s))).average();
+        System.out.println(d);
+        System.out.println();
+
+    }
+
+    public static void two_one() {
+        ArrayList<String> list = new ArrayList<>();
+        list.add("Hello");
+        list.add("Hi");
+        list.add("Hello!");
+        list.add("Privet");
+        list.add("Hello");
+        list.add("Chao");
+        list.add("Salut!");
+        list = (ArrayList) list.stream().distinct().collect(Collectors.toList());
+        System.out.println(list);
+        System.out.println();
+        for (int i = 0; i < list.size(); i++) {
+            String newValue = list.get(i).toUpperCase(Locale.ROOT);
+            list.set(i, newValue);
+        }
+        System.out.println(list);
+    }
+    public class Person {
+        String surname;        // имя
+        int age;
+    }
+    ArrayList<Person> persons = new ArrayList<>();
+    persons.add("Petrov", 33);
+//    public static void two_two() {
+//        Person person1 = new Person
+//
+//    }
+
+
+
+}
 
