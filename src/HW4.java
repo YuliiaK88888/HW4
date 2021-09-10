@@ -2,7 +2,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 import java.util.ArrayList;
 
-public class HW4<a> {
+public class HW4 {
 
 
     public static void main(String[] args) {
@@ -268,33 +268,28 @@ public class HW4<a> {
 
     }
 
-    public static class Person {
-        static String surname;
-        static int age;
-
-        Person(String surname, int age) {
-            Person.surname = surname;
-            Person.age = age;
-        }
-    }
     public static void two_two() {
         Person a = new Person("Petrov", 30);
         Person b = new Person("Ivanov", 10);
         Person c = new Person("Sidorov", 55);
         Person d = new Person("Vasiliyev", 90);
-        ArrayList<Person> persons = new ArrayList<Person>();
+        List<Person> persons = new ArrayList<>();
         persons.add(a);
         persons.add(b);
         persons.add(c);
         persons.add(d);
+        for (int i = 0; i < persons.size(); i++) {
+            if (persons.get(i).getAge() >= 30) {
+                System.out.println(persons.get(i).getSurname());
 
-        for (int i = 0; i < persons.size(); i++){
-            if ( persons.get(i).age>=30){
-                System.out.println(persons.get(i));
             }
         }
-
-
+        //2 solution
+//        for (Person person : persons) {
+//            if (person.age >= 30) {
+//                System.out.println(person.surname);
+//            }
     }
 }
+
 
